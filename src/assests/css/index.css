@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* font family */
+@font-face {
+  font-family: "yekanBold";
+  src: url("./../fonts/IRANYekanBold.ttf");
+}
+@font-face {
+  font-family: "regular";
+  src: url("./../fonts/IRANYekanRegular.ttf");
+}
+
+* {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+@layer base {
+  body {
+    direction: rtl;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .container_menu_category > li {
+    @apply flex items-center gap-1 py-3 border-b-2 transition-all  cursor-pointer  border-transparent hover:border-b-red-500;
+  }
+  .container_menu_category svg {
+    @apply w-5 h-5;
+  }
+}
+
+.yekanBold {
+  font-family: "yekanBold";
+}
+.regular {
+  font-family: "regular";
+}
+
+.posts {
+  scroll-snap-type: y mandatory;
+}
+
+.posts > div {
+  scroll-snap-align: start;
+  min-width: 100%;
+}
+
+.posts::-webkit-scrollbar {
+  width: 2px;
+  display: none;
+}
+
+.posts::-webkit-scrollbar-thumb {
+  background-color: red;
+}
+
+.posts::-webkit-scrollbar-track {
+  background-color: green;
+}
