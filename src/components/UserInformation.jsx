@@ -4,6 +4,7 @@ import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import { FaRegComment } from "react-icons/fa";
 import { MdAddPhotoAlternate } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
+import {Link} from "react-router-dom"
 const UserInformation = () => {
   return (
     <div className="flex flex-col ">
@@ -22,7 +23,12 @@ const UserInformation = () => {
             <h2 className=" yekanBold text-lg ">
               مهدی شریفلو
             </h2>
-            <FiEdit className="cursor-pointer" size={20} />
+            <Link to="/edit/profile">
+              <FiEdit
+                className="cursor-pointer"
+                size={20}
+              />
+            </Link>
           </div>
           <div className="flex justify-between mt-14 text-gray-700 yekanBold text-sm">
             {/* project */}
@@ -48,8 +54,6 @@ const UserInformation = () => {
           </div>
         </div>
       </div>
-
-    
     </div>
   );
 };

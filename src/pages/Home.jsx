@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AddNewPost from "../components/AddNewPost";
 import CradPost from "../components/CradPost";
 import Header from "../components/Header";
@@ -8,6 +8,9 @@ import QuickAccess from "../components/QuickAccess";
 import UserInformation from "../components/UserInformation";
 import Navigation from "../components/Navigation";
 const Home = () => {
+  const { openModalNewPost, setOpenModalNewPost } =
+    useState(false);
+
   return (
     <>
       <div>
@@ -18,7 +21,10 @@ const Home = () => {
 
           {/* add new post or see all post */}
           <div className=" hidden lg:block sticky top-28 border h-fit rounded-lg max-w-[350px] min-w-[350px] pb-3 border-gray-100 shadow-sm">
-            <NewPost />
+            <NewPost
+              openModalNewPost={openModalNewPost}
+              setOpenModalNewPost={setOpenModalNewPost}
+            />
           </div>
 
           {/* posts */}
@@ -31,7 +37,10 @@ const Home = () => {
         </main>
       </div>
 
-      <AddNewPost />
+      <AddNewPost
+        openModalNewPost={openModalNewPost}
+        setOpenModalNewPost={setOpenModalNewPost}
+      />
       <Navigation />
     </>
   );
