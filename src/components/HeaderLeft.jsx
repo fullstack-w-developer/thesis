@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { Logout } from "@mui/icons-material";
 import { deepOrange } from "@mui/material/colors";
+import { Link } from "react-router-dom";
 
 const HeaderLeft = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -48,7 +49,7 @@ const HeaderLeft = () => {
             filter:
               "drop-shadow(0px 0px 4px rgba(0,0,0,0.22))",
             mt: 1,
-           
+
             "&:before": {
               content: '""',
               display: "block",
@@ -66,14 +67,17 @@ const HeaderLeft = () => {
       >
         <div className="flex items-center cursor-pointer px-4">
           <Avatar className="!w-9 !h-9" />
-          <p className="yekanBold text-xs px-3">مهدی شریفلو</p>
+          <p className="yekanBold text-xs px-3">
+            مهدی شریفلو
+          </p>
         </div>
+        <Link to="/auth">
+          <div className="flex items-center mt-5 mb-2 cursor-pointer justify-around ">
+            <Logout className="!w-5 !h-5" />
 
-        <div className="flex items-center mt-5 mb-2 cursor-pointer justify-around ">
-          <Logout className="!w-5 !h-5" />
-
-          <p className="yekanBold text-xs px-3">خروج</p>
-        </div>
+            <p className="yekanBold text-xs px-3">خروج</p>
+          </div>
+        </Link>
       </Menu>
     </div>
   );
